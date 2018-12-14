@@ -3,3 +3,20 @@
     margin:0;
     box-sizing:border-box;
 }
+
+body{
+    height: 100vh;
+    background:blue;
+}
+
+/* the border for the game */
+
+.memory-card{
+
+    border: 2px solid lime;
+}
+
+img{
+    width:100px;
+
+}
