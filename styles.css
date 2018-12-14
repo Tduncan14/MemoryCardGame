@@ -7,6 +7,7 @@
 body{
     height: 100vh;
     background:blue;
+    display:flex;
 }
 
 /* the border for the game */
@@ -17,20 +18,29 @@ body{
     display:flex;
     flex-wrap:wrap;
     border: 2px solid lime;
+    margin:auto;
 }
 
 .memory-card{
-    width: 25%;
-    height:33.333%;
-    border:2px solid aqua;
-}
-
-img{
-    width:100px;
+    width:calc(25% - 10px);
+    height:calc(33.333% - 10px);
+    position:relative;
+    margin:5px;
+    transform:scale(1);
 
 }
+
+.memory-card:active{
+    transform:scale(.97);
+    transition: transform.2s;
+}
+
 
 .front-face,.back-face{
+    width:100%;
+    height:100%;
+    border-radius:5px;
+    background:lightblue;
     position:absolute;
     border:2px solid gray;
 }
