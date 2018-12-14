@@ -11,8 +11,8 @@ body{
 
 /* the border for the game */
 
-.memory-card{
-
+.memory-game{
+    
     border: 2px solid lime;
 }
 
