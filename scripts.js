@@ -13,13 +13,26 @@ function flipcard (){
      hasFlippedCard =true;
      firstCard = this;
 
-     console.log(hasFlippedCard , firstCard);
+     
  }
   else{
       //second card flip
       hasFlippedCard =false;
       secondCard = this
+
+      console.log({firstCard,secondCard});
+
+      // do both cards match
+
+      if(firstCard.dataset.framework === secondCard.dataset.framework){
+          firstCard.removeEventListener('click' , flipcard);
+          secondCard.removeEventListener('click',flipcard);
+
+      }
+      console.log("Function was excuted");
+      
   }
+
 }
 
 
