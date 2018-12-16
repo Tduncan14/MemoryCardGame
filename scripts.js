@@ -43,15 +43,10 @@ function checkForMatch(){
     }
 
     else{
-        lockboard =true;
-        setTimeout(() =>{
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-        lockboard =false;
-    },1500);
-    console.log("Function was excuted");
+     unflipCards();
+
     
-}
+  }
 }
 
 function disableCards(){
@@ -59,6 +54,15 @@ function disableCards(){
     secondCard.removeEventListener('click',flipcard);
 }
 
+
+function unflipCards (){
+    setTimeout(() =>{
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        lockboard =false;
+    },1500);
+
+}
 
 //loops through the card
 cards.forEach(card => card.addEventListener('click' , flipcard));
