@@ -8,8 +8,9 @@ let lockboard =false;
 
 
 function flipcard (){
+  if(lockboard) return
  this.classList.toggle('flip');
- if(lockboard) return;
+ 
 
 
 
@@ -56,11 +57,14 @@ function disableCards(){
 
 
 function unflipCards (){
+    lockboard = true;
     setTimeout(() =>{
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         lockboard =false;
     },1500);
+
+
 
 }
 
