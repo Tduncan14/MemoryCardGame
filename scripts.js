@@ -4,9 +4,14 @@ const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
 let firstCard,secondCard;
+let lockboard =false;
+
 
 function flipcard (){
  this.classList.toggle('flip');
+ if(lockboard) return;
+
+
 
  if(!hasFlippedCard){
      // first click
@@ -23,18 +28,36 @@ function flipcard (){
       console.log({firstCard,secondCard});
 
       // do both cards match
+      checkForMatch()
 
-      if(firstCard.dataset.framework === secondCard.dataset.framework){
-          firstCard.removeEventListener('click' , flipcard);
-          secondCard.removeEventListener('click',flipcard);
-
-      }
-      console.log("Function was excuted");
-      
-  }
+   
 
 }
+}
 
+function checkForMatch(){
+    if(firstCard.dataset.framework === secondCard.dataset.framework){
+        firstCard.removeEventListener('click' , flipcard);
+        secondCard.removeEventListener('click',flipcard);
+        disableCards();
+    }
+
+    else{
+        lockboard =true;
+        setTimeout(() =>{
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        lockboard =false;
+    },1500);
+    console.log("Function was excuted");
+    
+}
+}
+
+function disableCards(){
+    firstCard.removeEventListener('click' , flipcard);
+    secondCard.removeEventListener('click',flipcard);
+}
 
 
 //loops through the card
