@@ -9,6 +9,7 @@ let lockboard =false;
 
 function flipcard (){
   if(lockboard) return
+  if(this === firstCard) return;
  this.classList.toggle('flip');
  
 
